@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions and troubleshooting
+    url: https://github.com/biswajitpanday/keyra-releases/blob/main/docs/faq.md
+    about: Most questions are answered in the FAQ.
+  - name: Report a security vulnerability
+    url: https://github.com/biswajitpanday/keyra-releases/security/advisories/new
+    about: Please report security problems privately, not as an issue.
+  - name: Business license
+    url: https://github.com/biswajitpanday/keyra-releases#license
+    about: Using Keyra in or for a business needs a paid license. Email biswajitmailid@gmail.com.
