@@ -24,21 +24,35 @@ Install the newest Keyra from the releases page. Keyra never writes over a vault
 ## "This vault was made by an early test version of Keyra"
 Only files from early test versions show this. Keyra cannot open them and does not change them.
 
-## What is `vault.keyra.pre-1.6.bak`?
-The copy of your vault from Keyra 1.5. Keyra 1.6 makes it once, right before it saves your vault in the new format for the first time. It is encrypted with the master password you had then. Keep it until you are sure you will not go back to 1.5; then you may delete it.
+## What are the old copies (`vault.keyra.pre-1.6.bak`, `vault.keyra.pre-restore-….bak`)?
+Keyra keeps these copies of your vault next to it:
+- `vault.keyra.pre-1.6.bak`: your vault from Keyra 1.5, made once, right before 1.6 saves the new format for the first time.
+- `vault.keyra.pre-restore-<time>.bak`: your vault from just before a restore.
+
+Each copy is encrypted, but it opens with the master password you had **when it was made**, and it still has the items of that day, also the ones you deleted later. If Documents syncs to OneDrive, the copies sync too. Keep them only while you may go back to Keyra 1.5 or want that older vault. To delete them, open Settings › Backup › **Delete old copies**. If you changed your master password because someone may know the old one, delete them now. Then also empty the OneDrive recycle bin.
 
 ## Can I go back to Keyra 1.5?
-Yes, with the copy Keyra 1.6 kept, but changes made in 1.6 are not in it, and 1.5 knows no cards, bank accounts, notes or identities. Keyra 1.5 cannot open or restore over a vault saved by 1.6, so swap the files by hand:
+Yes, with `vault.keyra.pre-1.6.bak`, but you lose everything you did in 1.6:
+- every item added in 1.6, also logins;
+- every change, deletion and category change made in 1.6;
+- a new master password (the copy opens with the one you had then).
+
+Keyra 1.5 cannot open your 1.6 vault, so swap the files by hand:
 1. Close Keyra and uninstall 1.6 (Settings → Apps → Keyra → Uninstall). Your vault in `Documents\Keyra` stays.
-2. In `Documents\Keyra`, rename `vault.keyra` to `vault.keyra.1.6.bak` and keep it.
-3. Rename `vault.keyra.pre-1.6.bak` to `vault.keyra`.
+2. In `Documents\Keyra`, rename `vault.keyra` to `vault.keyra.1.6.bak` and keep it. Only Keyra 1.6 or newer can open it.
+3. Rename the 1.5 copy to `vault.keyra`. It is `vault.keyra.pre-1.6.bak`, or the newest `vault.keyra.pre-1.6-<time>.bak` if there are several.
 4. Install 1.5 and unlock with the master password you had then.
+
+If you deleted the old copies (Settings › Backup › Delete old copies), you cannot go back to 1.5.
 
 ## "Keyra could not make a copy of your vault before the upgrade"
 Keyra did not save anything, so your vault is unchanged. Check that `Documents\Keyra` is not full or read-only and that OneDrive has finished syncing, then try again.
 
 ## Which item types does Keyra have?
-Logins, cards, bank accounts, secure notes and identities. Choose the type with the small arrow next to "Add item". The type of an item cannot be changed later.
+Logins, cards, bank accounts, secure notes and identities. Choose the type with the small arrow next to "Add item". The type of an item cannot be changed later. New cards, bank accounts, secure notes and identities start protected with Windows Hello; you can untick it before you save.
+
+## Should I save my card's CVV?
+It is your choice. Keyra keeps the CVV encrypted and masked, behind Windows Hello on a protected card. But anyone with your master password can see it, and it stays in your backups and old copies. Your bank may also ask you not to write it down anywhere. If you only shop with a few cards, you may prefer to leave the CVV out and read it from the card.
 
 ## Windows Hello does not appear
 Windows Hello must be set up in Windows Settings → Accounts → Sign-in options. Without it Keyra asks for the master password instead. Windows Hello is only a gate for protected items inside the unlocked app; it never unlocks the vault.

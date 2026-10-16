@@ -19,8 +19,9 @@ Keyra also always locks on sleep, on exit, and after 5 wrong master passwords in
 
 | Item | What it does |
 |---|---|
-| Back up vault | Saves a copy of the encrypted vault where you choose. Shows "Last backup: …", and "A copy for Keyra 1.5 is kept as <file name>." while a pre-1.6 copy exists. |
-| Restore from backup | Replaces the vault with a backup (asks for the backup's master password; keeps the old vault as `.bak`). |
+| Back up vault | Saves a copy of the encrypted vault where you choose. Shows "Last backup: …". |
+| Restore from backup | Replaces the vault with a backup (asks for the backup's master password; keeps the old vault as an old copy, `vault.keyra.pre-restore-<time>.bak`). |
+| Delete old copies | Shown only while old copies exist (the vault before a restore, or your Keyra 1.5 vault). Says how many there are, and that they open with the master password of that time and keep deleted items. Asks first, then deletes only those files. |
 | Vault file | Shows where the vault is; **Open folder** opens it in File Explorer. |
 
 ## Appearance

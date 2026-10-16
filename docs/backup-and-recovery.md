@@ -22,6 +22,8 @@ From the lock screen (**Restore from backup…**) or Settings → **Restore from
 
 To undo a restore: restore the `.bak` file the same way (it opens with the password that vault had). If no vault was there before, no `.bak` is made.
 
+The `.bak` file is an old copy: it opens with the password that vault had and keeps its items, also deleted ones. When you no longer need it, delete it in Settings › Backup › Delete old copies.
+
 ## If Keyra says the vault is damaged
 "The vault could not be authenticated or appears corrupted. Your original vault has not been modified." (damaged header or content), or "Wrong password. Try again." and, from the second try, a help line that also names a damaged file (a wrong password and a modified file look the same).
 

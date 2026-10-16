@@ -8,14 +8,16 @@ Keyra now keeps more than logins: cards, bank accounts, secure notes and identit
 - Item types: **Login**, **Card** (cardholder, number, brand, valid from, expiry, CVV, PIN, billing address, bank phone), **Bank account** (bank, holder, account number, type, IBAN, SWIFT/BIC, routing or sort code, branch, PIN), **Secure note** (up to 50 000 characters) and **Identity** (title, name, company, date of birth, contact details, passport, national ID and driver licence with expiry dates, tax number).
 - A "Types" group in the sidebar with counts, and "Add item" with a menu of the types.
 - Rows show the type and a short summary, like "Visa ···· 1111 · exp 08/28"; only the last 4 digits are ever shown. Card numbers, CVVs, PINs, account numbers, IBANs, note text and ID numbers are masked like passwords.
-- New cards, bank accounts and identities start protected with Windows Hello.
+- New cards, bank accounts, secure notes and identities start protected with Windows Hello.
+- The editor checks each field when you leave it and on Save, ignores characters a field cannot hold (also when you paste), and shows month and year like "08/28".
 - Health has a new **Expiring** tab: cards (60 days before the end of the expiry month), passports (180 days) and ID cards and driver licences (60 days).
-- CSV import brings in secure notes (rows with a name and notes but no username and no password).
+- CSV import brings in secure notes (rows with a name and notes, but no username, password or web address).
+- Settings › Backup shows your old copies of the vault (from before a restore, and your 1.5 vault). It warns that they still open with the master password of that time, and deletes them after asking.
 - Search also finds cardholders, brands, banks, account holders, names and companies, never numbers or secrets.
 
 ### Upgrade from 1.5
-- The vault format is now version 5. On the first change, Keyra first keeps a copy of your 1.5 vault as `vault.keyra.pre-1.6.bak` next to it, then saves the new format. Keyra 1.5 cannot open the new format (it says it is from a newer Keyra and changes nothing). To go back, uninstall 1.6 and rename the copy to `vault.keyra`; see the FAQ.
-- Legacy snapshots are now version 2. Your existing shares keep working. Heirs need Keyra 1.6 or newer.
+- Keyra 1.6 saves your vault in a new way that Keyra 1.5 cannot open (1.5 says it is from a newer Keyra and changes nothing). Before the first save, which can come right after the first unlock, Keyra keeps a copy of your 1.5 vault as `vault.keyra.pre-1.6.bak` next to it. Going back to 1.5 means losing everything done in 1.6; follow the steps in the FAQ.
+- New legacy snapshots need Keyra 1.6 or newer to open. Your existing shares keep working.
 
 ## 1.5.0
 

@@ -33,7 +33,7 @@ To get notified, use **Watch → Custom → Releases** on this repository.
 2. To remove the certificate trust, in an **admin** PowerShell:
    `Get-ChildItem Cert:\LocalMachine\TrustedPeople | Where-Object Thumbprint -eq 'AA4E8EA05917E2598282E8120D44F17A1178D97D' | Remove-Item`
    (or `certlm.msc` → Trusted People → Certificates → `Keyra Dev` → Delete).
-3. To remove your data, delete `Documents\Keyra` (the vault, `.bak` copies from restores) and your own backups and legacy snapshot files. This cannot be undone. If Documents is in OneDrive, also check the OneDrive recycle bin and version history.
+3. To remove your data, delete `Documents\Keyra` (the vault and its old `.bak` copies) and your own backups and legacy snapshot files. This cannot be undone. If Documents is in OneDrive, also check the OneDrive recycle bin and version history.
 4. If `%LOCALAPPDATA%\Keyra` exists, delete it too.
 
 ## Where things are
@@ -41,6 +41,6 @@ To get notified, use **Watch → Custom → Releases** on this repository.
 | What | Where |
 |---|---|
 | Vault (encrypted) | `Keyra\vault.keyra` in your Documents folder: usually `%USERPROFILE%\Documents`, or `%USERPROFILE%\OneDrive\Documents` when OneDrive backs up Documents. If Documents is synced, the encrypted file syncs too. |
-| Previous vault after a restore | same folder, `vault.keyra.pre-restore-<time>.bak` |
+| Old copies: the vault before a restore, and your Keyra 1.5 vault (they open with the master password of that time; delete them in Settings › Backup) | same folder, `vault.keyra.pre-restore-<time>.bak` and `vault.keyra.pre-1.6.bak` |
 | Legacy snapshot (encrypted, only if you set up legacy access) | the file you choose |
 | Theme choice and event log (no secrets) | `%LOCALAPPDATA%\Keyra\`, or the MSIX private copy of it |
