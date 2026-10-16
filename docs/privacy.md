@@ -29,7 +29,7 @@ Keyra's app data folder is `%LOCALAPPDATA%\Keyra`. The installed app usually kee
 
 ## Your control
 
-- All your data is in files you can see, copy and delete. See "Uninstall and remove data" in the [README](../README.md).
+- All your data is in files you can see, copy and delete. See [uninstall and remove data](install.md#uninstall-and-remove-data).
 - Keyra cannot recover a lost master password. Nobody can.
 
 More: [security](security.md), [threat model](threat-model.md).

@@ -40,10 +40,10 @@ Keyra is per-monitor DPI aware, so it should stay sharp on every screen and when
 "Block screenshots" is on by default. Turn it off in Settings → Advanced → Privacy (it asks first). It is always on before unlock.
 
 ## Does Keyra update itself?
-No. It never connects to the internet. Watch the releases page and install new versions by hand (see "Update" in the README).
+No. It never connects to the internet. Watch the releases page and install new versions by hand (see [update](install.md#update)).
 
 ## Where is my data, and how do I remove it?
-See [privacy](privacy.md) and "Uninstall and remove data" in the README.
+See [privacy](privacy.md) and [uninstall and remove data](install.md#uninstall-and-remove-data).
 
 ## How do I report a bug or a security problem?
 Bugs and ideas: the issue forms on the releases repository (never put real passwords or vault files in an issue). Security problems: report them privately, see [SECURITY.md](../SECURITY.md).

@@ -1,5 +1,19 @@
 # Security
 
+## How it works
+
+Saving (unlocking runs the same steps backwards: salt and parameters from the header, then Argon2id, then the key, then AES-GCM decryption):
+
+```mermaid
+flowchart LR
+    M["Master password"] --> K["Argon2id<br>random 16-byte salt<br>256 MiB, 8 passes"]
+    K --> Key["256-bit key<br>(memory only)"]
+    J["Accounts, categories, settings<br>and the legacy key<br>(JSON, memory only)"] --> G["AES-256-GCM<br>new 12-byte nonce per save<br>header = associated data"]
+    Key --> G
+    G --> T["Temp file → flush → rename"]
+    T --> D[("vault.keyra")]
+```
+
 ## What is encrypted
 The whole vault payload: every account (website, email, password, URL, notes, recovery email and phone, PIN, security questions, password history, category, timestamps), the category list, the security and privacy settings and, when legacy access is on, the legacy key with its wraps.
 Only the file header is plaintext: format version, KDF name and parameters, salt, cipher name, nonce. None of it is secret.

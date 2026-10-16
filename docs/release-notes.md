@@ -18,7 +18,7 @@ The first public release of Keyra: a local, offline password vault for Windows. 
 - Atomic saves; a read-only vault file fails at once instead of waiting.
 
 ### Install
-Windows 10 version 2004 (build 19041) or later, x64. See "Install" in the README: check the SHA-256 and the signer thumbprint `AA4E8EA05917E2598282E8120D44F17A1178D97D` (subject `CN=Keyra Dev`), trust the certificate once, then `Add-AppxPackage`.
+Windows 10 version 2004 (build 19041) or later, x64. See [install](install.md): check the SHA-256 and the signer thumbprint `AA4E8EA05917E2598282E8120D44F17A1178D97D` (subject `CN=Keyra Dev`), trust the certificate once, then `Add-AppxPackage`.
 
 ### Known limits
 - Windows only, one user, one vault; no sync service, no browser autofill, no 2FA codes yet.
