@@ -19,7 +19,7 @@ Keyra also always locks on sleep, on exit, and after 5 wrong master passwords in
 
 | Item | What it does |
 |---|---|
-| Back up vault | Saves a copy of the encrypted vault where you choose. Shows "Last backup: …". |
+| Back up vault | Saves a copy of the encrypted vault where you choose. Shows "Last backup: …", and "A copy for Keyra 1.5 is kept as <file name>." while a pre-1.6 copy exists. |
 | Restore from backup | Replaces the vault with a backup (asks for the backup's master password; keeps the old vault as `.bak`). |
 | Vault file | Shows where the vault is; **Open folder** opens it in File Explorer. |
 
@@ -45,9 +45,9 @@ Closed when Settings opens. It opens by itself when your legacy snapshot is out 
 
 | Item | What it does |
 |---|---|
-| Set up legacy access | Makes three shares; any two open a read-only snapshot of the accounts you choose. |
-| Choose accounts | Picks the accounts that go into the snapshot (none by default). |
-| Update snapshot | Writes the snapshot again with the current accounts, same shares. |
+| Set up legacy access | Makes three shares; any two open a read-only snapshot of the items you choose. |
+| Choose items | Picks the items that go into the snapshot (none by default). |
+| Update snapshot | Writes the snapshot again with the current items, same shares. |
 | Make new shares | New key and shares; the old shares stop working for new snapshots. |
 | Turn off | Removes legacy access and offers to delete the snapshot file. |
 

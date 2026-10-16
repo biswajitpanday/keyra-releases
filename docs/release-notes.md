@@ -1,5 +1,22 @@
 # Release notes
 
+## 1.6.0
+
+Keyra now keeps more than logins: cards, bank accounts, secure notes and identities, in the same encrypted vault.
+
+### New
+- Item types: **Login**, **Card** (cardholder, number, brand, valid from, expiry, CVV, PIN, billing address, bank phone), **Bank account** (bank, holder, account number, type, IBAN, SWIFT/BIC, routing or sort code, branch, PIN), **Secure note** (up to 50 000 characters) and **Identity** (title, name, company, date of birth, contact details, passport, national ID and driver licence with expiry dates, tax number).
+- A "Types" group in the sidebar with counts, and "Add item" with a menu of the types.
+- Rows show the type and a short summary, like "Visa ···· 1111 · exp 08/28"; only the last 4 digits are ever shown. Card numbers, CVVs, PINs, account numbers, IBANs, note text and ID numbers are masked like passwords.
+- New cards, bank accounts and identities start protected with Windows Hello.
+- Health has a new **Expiring** tab: cards (60 days before the end of the expiry month), passports (180 days) and ID cards and driver licences (60 days).
+- CSV import brings in secure notes (rows with a name and notes but no username and no password).
+- Search also finds cardholders, brands, banks, account holders, names and companies, never numbers or secrets.
+
+### Upgrade from 1.5
+- The vault format is now version 5. On the first change, Keyra first keeps a copy of your 1.5 vault as `vault.keyra.pre-1.6.bak` next to it, then saves the new format. Keyra 1.5 cannot open the new format (it says it is from a newer Keyra and changes nothing). To go back, uninstall 1.6 and rename the copy to `vault.keyra`; see the FAQ.
+- Legacy snapshots are now version 2. Your existing shares keep working. Heirs need Keyra 1.6 or newer.
+
 ## 1.5.0
 
 The first public release of Keyra: a local, offline password vault for Windows. One encrypted file, no account, no cloud, no telemetry.

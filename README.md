@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <img src="docs/images/details-dark.png" width="820" alt="Keyra in dark theme: account list with the details panel open">
+  <img src="docs/images/details-dark.png" width="820" alt="Keyra in dark theme: a card with its details panel open">
 </p>
 
 ## Why Keyra
@@ -28,19 +28,23 @@
     <td width="50%"><b>📴 Truly offline</b><br>No network code at all: no telemetry, no update check, no cloud.</td>
   </tr>
   <tr>
-    <td><b>🩺 Password health</b><br>Finds reused, weak and old passwords and tells you how to fix them.</td>
-    <td><b>📥 Easy import</b><br>From Chrome, Edge, Firefox, Bitwarden, KeePass, LastPass, Proton Pass and more.</td>
+    <td><b>🗂️ More than passwords</b><br>Logins, cards, bank accounts, secure notes and identities in one encrypted vault.</td>
+    <td><b>🩺 Health check</b><br>Finds reused, weak and old passwords, and cards or ID documents that expire soon.</td>
   </tr>
   <tr>
     <td><b>🙈 Private on screen</b><br>Masked values, safe clipboard, auto-lock, hidden from screenshots and screen sharing (on by default).</td>
-    <td><b>🗝️ Legacy access</b><br>Any two of three shares open a read-only snapshot of the accounts you choose.</td>
+    <td><b>🗝️ Legacy access</b><br>Any two of three shares open a read-only snapshot of the items you choose.</td>
+  </tr>
+  <tr>
+    <td><b>📥 Easy import</b><br>From Chrome, Edge, Firefox, Bitwarden, KeePass, LastPass, Proton Pass and more.</td>
+    <td><b>🔐 Windows Hello</b><br>Chosen items ask for Windows Hello before a secret is shown or copied.</td>
   </tr>
 </table>
 
 <p align="center">
-  <img src="docs/images/vault-light.png" width="400" alt="Account list in light theme with categories, favourites and protected accounts">
+  <img src="docs/images/vault-light.png" width="400" alt="Item list in light theme with categories, favourites and protected items">
   &nbsp;
-  <img src="docs/images/health-dark.png" width="400" alt="Password health panel in dark theme: reused and old passwords">
+  <img src="docs/images/health-dark.png" width="400" alt="Password health panel in dark theme: an expiring passport">
 </p>
 
 All features, keys and limits: [features](docs/features.md).
