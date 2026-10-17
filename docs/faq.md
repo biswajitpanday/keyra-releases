@@ -55,7 +55,13 @@ Logins, cards, bank accounts, secure notes and identities. Choose the type with 
 It is your choice. Keyra keeps the CVV encrypted and masked, behind Windows Hello on a protected card. But anyone with your master password can see it, and it stays in your backups and old copies. Your bank may also ask you not to write it down anywhere. If you only shop with a few cards, you may prefer to leave the CVV out and read it from the card.
 
 ## Windows Hello does not appear
-Windows Hello must be set up in Windows Settings → Accounts → Sign-in options. Without it Keyra asks for the master password instead. Windows Hello is only a gate for protected items inside the unlocked app; it never unlocks the vault.
+Windows Hello must be set up in Windows Settings → Accounts → Sign-in options. Without it Keyra asks for the master password instead. For "Unlock with Windows Hello", the switch in Settings → Security is disabled until Windows Hello is set up (if it is already on, you can still turn it off).
+
+## How does "Unlock with Windows Hello" work?
+Turn it on in Settings → Security (it asks your master password once). After that, each time you unlock with your master password, Windows Hello asks once to confirm. When Keyra locks, the lock screen then asks Windows Hello by itself when you bring Keyra to the front, and shows an "Unlock with Windows Hello" button. It works only while Keyra runs: after you close Keyra or restart the PC, and at least every 14 days, you need your master password. Protected items still ask for their own check. The setting is per PC.
+
+## Keyra says "Use your master password this time"
+Windows Hello unlock could not open the vault, for example in a Remote Desktop session, after the Windows Hello key was removed, or after a restore or a master password change on another PC. Unlock with your master password; Hello unlock starts again after that.
 
 ## How do I move Keyra to a new PC?
 Install Keyra, copy `vault.keyra` into `Documents\Keyra` on the new PC (or use **Restore from backup**), and unlock with your master password.

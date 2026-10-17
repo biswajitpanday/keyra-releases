@@ -1745,7 +1745,7 @@ You are solely responsible for determining the appropriateness of using and dist
 
 
 ==============================================================================
-.NET runtime 10.0.12 (MIT)
+.NET runtime 10.0.13 (MIT)
 ==============================================================================
 The MIT License (MIT)
 
@@ -3192,7 +3192,7 @@ You are solely responsible for determining the appropriateness of using and dist
 
 
 ==============================================================================
-Windows Desktop runtime 10.0.12 (MIT)
+Windows Desktop runtime 10.0.13 (MIT)
 ==============================================================================
 The MIT License (MIT)
 

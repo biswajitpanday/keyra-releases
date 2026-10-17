@@ -67,9 +67,18 @@ Every save writes a new temp file in the same folder, flushes it to disk, then r
 - Limits: a camera pointed at the screen, other software running with your rights that reads Keyra's memory, or a remote-desktop session that copies the screen at a lower level are not stopped. A popup is blocked while Windows is about to show it (a hook on Keyra's UI thread), before its first frame; a second hook catches windows shown in other ways.
 - "Blur the list" (off by default) blurs website and email of rows that are not hovered or selected, against people looking over your shoulder.
 
+## Unlock with Windows Hello
+- Off by default. Turned on per PC in Settings → Security (stored in plain `hello-unlock.txt` under LocalAppData; it holds no secret). Turning it on asks the master password. Editing the file to "on" only makes Keyra ask Windows Hello after the next master-password unlock; nothing works without that prompt.
+- Keyra uses one Windows Hello key per Windows user, named "Keyra vault unlock" (RSA 2048, made by Windows, in the TPM when the PC has one). Keyra never sees its private part. Two Keyra installs of the same Windows user share this key; turning the setting off in one makes Hello unlock in the other ask for the master password.
+- After each master-password unlock (and after turning it on or changing the master password), Keyra asks Windows Hello to sign a new random 32-byte challenge. Core derives a wrap key = HKDF-SHA256(signature, info "Keyra hello unlock v1") and encrypts the vault key with AES-256-GCM (random nonce; the vault header KDF bytes as associated data). The signature and the wrap key are zeroed at once.
+- On lock the plain key is zeroed; only the wrapped key, the challenge and the time of the master-password entry stay in memory. A Hello unlock signs the same challenge again, unwraps the key and opens the file with every normal check (no Argon2).
+- The wrapped key is never written to disk, sent or logged. It is dropped when Keyra exits, when the setting is turned off, on restore, after 5 wrong master passwords in a "Confirm it's you" check (wrong passwords on the lock screen do not drop it), after every successful master-password unlock or change (a new one is made), on a failed signature or unwrap, and 14 days after the master-password entry that made it (wall clock and a clock the user cannot set back are both checked).
+- A Hello unlock does not open protected items: they still ask for their own check. Hello results never count as wrong passwords.
+- Limits: someone who can pass your Windows Hello (or knows your Windows Hello PIN) can unlock a locked Keyra while it runs. Malware in your session (T12) is not stopped. A copied vault file still needs the master password.
+
 ## Protected items (Windows Hello)
 - An item can be marked "Protect with Windows Hello"; new cards, bank accounts, secure notes and identities start protected. Showing or copying its secrets (password, notes, recovery phone, PIN, security answers, old passwords, card number, CVV, account number, IBAN, note text, passport, national ID, licence and tax numbers), Edit, Delete, Restore, Clear history and turning protection off first ask Windows Hello, or the master password if Hello is not available or was canceled.
-- This is a gate inside the unlocked app, not encryption. The vault is still encrypted only with the key from the master password; a protected item is stored the same way as any other. Hello keys, PINs or biometrics are never used to derive or store a key.
+- This is a gate inside the unlocked app, not encryption. The vault is still encrypted only with the key from the master password; a protected item is stored the same way as any other. The gate itself never derives or stores a key (Hello unlock, above, is separate).
 - A passed check opens only that item for 60 seconds; a dialog opened for it (editor, confirmation) keeps it open until the dialog closes. Lock ends every open item. Core itself refuses changes to a protected item without a passed check.
 - The Health report never names an unprotected login that has the same password as a protected one.
 - The master-password check runs Argon2id with the open vault's salt and parameters and compares the result with the key in memory in constant time. Nothing is stored. After 5 wrong master passwords in a row the vault locks. The current password in Change master password is the same check and counts too. Argon2 runs outside the vault's internal lock, so the window stays responsive.
@@ -100,7 +109,7 @@ Keyra makes no network calls. There is no telemetry, update check, or cloud API.
 
 ## Windows features considered
 - DPAPI / Credential Manager: not used. They would tie unlock to the Windows account (which this design assumes may be compromised or copied) and add complexity. The vault stays protected only by the master password.
-- Windows Hello: used only as the gate for protected items while unlocked (see above), never to unlock the vault or to hold a key.
+- Windows Hello: the gate for protected items while unlocked, and the opt-in Hello unlock while Keyra runs (see above). It never protects the vault file; that is only the master password.
 - File permissions: the vault is in the user's profile, which other standard users cannot read by default. This is a secondary layer; encryption is the real protection.
 
 ## What Keyra cannot protect against

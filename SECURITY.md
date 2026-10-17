@@ -24,7 +24,7 @@ Only the latest release receives security fixes.
 
 ## Scope
 
-In scope: the vault file format and its encryption, key derivation, saving and restoring, locking, clipboard handling, CSV import, the Windows Hello gate, legacy shares and snapshots, screen-capture blocking, the tray icon and the second-start signal, the installer package, and anything that could expose account data.
+In scope: the vault file format and its encryption, key derivation, saving and restoring, locking, clipboard handling, CSV import, the Windows Hello gate and Windows Hello unlock, legacy shares and snapshots, screen-capture blocking, the tray icon and the second-start signal, the installer package, and anything that could expose account data.
 
 Out of scope, because Keyra cannot protect against them (see [the threat model](docs/threat-model.md)):
 

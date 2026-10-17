@@ -24,6 +24,7 @@ Everything Keyra does, its keys and its limits. To install, see [install](instal
 - **Offline by design:** Keyra has no network code: no telemetry, no update check. It never sends anything anywhere.
 - **Hidden by default:** passwords, notes, the recovery phone, PINs, security answers, old passwords, card numbers, CVVs, account numbers, IBANs and ID numbers are masked. A revealed value hides again after 20 seconds, when you select another item, when a dialog opens, when the window loses focus, or when the vault locks.
 - **Screen-capture blocking:** Keyra's windows are left out of screenshots, recordings and screen sharing (on by default; always on while locked). Optionally blur the list rows you are not pointing at.
+- **Unlock with Windows Hello (opt-in):** after you unlock once with your master password, Windows Hello can unlock Keyra until you close it. Keyra asks for the master password at least every 14 days. Off by default; turn it on in Settings → Security on each PC.
 - **Windows Hello for chosen items:** protected items ask for Windows Hello (or the master password) before a secret is shown or copied, or the item is changed. New cards, bank accounts, secure notes and identities start protected. This is an extra gate inside the unlocked app, not extra encryption.
 - **Safe clipboard:** copied values are kept out of Windows clipboard history and cloud clipboard and are cleared after 30 seconds (adjustable).
 - **Auto-lock:** after inactivity (5 minutes by default), on minimize, when Windows locks, on sleep and on exit. Optionally hide Keyra next to the clock instead of the taskbar (Minimize to tray); it locks when it hides.
@@ -59,6 +60,7 @@ On a protected item, Space, Ctrl+C, Del and double-click ask for Windows Hello f
 - While unlocked, item data lives in normal .NET strings, which cannot be reliably wiped from memory.
 - The MSIX is signed with a self-signed certificate, so you trust it once by hand (see [install](install.md)).
 - Windows Hello protection guards the app, not the file: anyone with the master password can open every item.
+- Windows Hello unlock works only while Keyra runs; after Keyra starts, and at least every 14 days, you need the master password. Someone who can unlock your Windows Hello (your face, finger or PIN) can unlock a locked Keyra while it runs.
 - Screen-capture blocking does not stop a camera or software that gets around Windows display affinity.
 - A legacy snapshot is a copy made by hand. It does not update itself; Keyra reminds you when it is out of date.
 - Minimize to tray hides Keyra only after locking it; the tray icon exists only while Keyra is hidden.

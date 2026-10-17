@@ -29,6 +29,8 @@ To get notified, use **Watch → Custom → Releases** on this repository.
 
 ## Uninstall and remove data
 
+Before you uninstall: if "Unlock with Windows Hello" is on, turn it off in Settings → Security. This deletes Keyra's Windows Hello key.
+
 1. Settings → Apps → Keyra → Uninstall. This removes the app and, usually, its theme choice and event log. Your vault in the Documents folder is **not** removed.
 2. To remove the certificate trust, in an **admin** PowerShell:
    `Get-ChildItem Cert:\LocalMachine\TrustedPeople | Where-Object Thumbprint -eq 'AA4E8EA05917E2598282E8120D44F17A1178D97D' | Remove-Item`

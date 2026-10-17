@@ -1,5 +1,17 @@
 # Release notes
 
+## 1.7.0
+
+Unlock Keyra with Windows Hello while it runs.
+
+### New
+- **Unlock with Windows Hello** (Settings → Security, off by default, per PC). After you unlock with your master password, Windows Hello can unlock Keyra until you close it. When you bring a locked Keyra to the front, it asks Windows Hello by itself; the lock screen also has an "Unlock with Windows Hello" button.
+- Keyra asks for the master password after it starts and at least every 14 days. Protected items still ask for their own check.
+- After a master password change, Windows Hello asks once to renew Hello unlock.
+
+### Security
+- The vault key is never written to disk. With Hello unlock on, a copy stays only in memory while Keyra runs, encrypted with a key that needs a Windows Hello signature. The vault file is still protected only by your master password; nothing changes in the file format.
+
 ## 1.6.0
 
 Keyra now keeps more than logins: cards, bank accounts, secure notes and identities, in the same encrypted vault.

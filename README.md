@@ -37,7 +37,7 @@
   </tr>
   <tr>
     <td><b>📥 Easy import</b><br>From Chrome, Edge, Firefox, Bitwarden, KeePass, LastPass, Proton Pass and more.</td>
-    <td><b>🔐 Windows Hello</b><br>Chosen items ask for Windows Hello before a secret is shown or copied.</td>
+    <td><b>🔐 Windows Hello</b><br>Unlock Keyra with Windows Hello while it runs (opt-in); chosen items ask again before a secret is shown or copied.</td>
   </tr>
 </table>
 

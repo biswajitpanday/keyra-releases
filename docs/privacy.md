@@ -11,13 +11,15 @@ Keyra is an offline app. It has no network code, no account, no telemetry and no
 | Your Keyra 1.5 vault, kept before the first 1.6 save | `Documents\Keyra\vault.keyra.pre-1.6.bak` (or `.pre-1.6-<time>.bak`) | No. Encrypted the same way, with the master password you had then; it keeps the items of that day, also deleted ones. Delete it in Settings › Backup › Delete old copies. |
 | Backups and legacy snapshots | Where you save them | No. Encrypted. |
 | Theme choice (System, Light or Dark) | `theme.txt` in Keyra's app data folder | Yes, but it holds only the theme. |
+| "Unlock with Windows Hello" on or off | `hello-unlock.txt` in Keyra's app data folder | Yes, but it holds only on or off. |
+| Keyra's Windows Hello key ("Keyra vault unlock"), only if you turned Hello unlock on | Windows (in the TPM when the PC has one) | No. Windows keeps it; Keyra never sees its private part. Turning the setting off deletes it, so turn it off before you uninstall Keyra. |
 | Event log | `keyra.log` in Keyra's app data folder | Yes, but it holds only event names and error codes: never passwords, keys, item data or error messages. |
 
 Keyra's app data folder is `%LOCALAPPDATA%\Keyra`. The installed app usually keeps a private copy of it that Windows removes on uninstall; if the real folder already existed, Windows uses that one and leaves it.
 
 ## What Keyra never stores
 
-- Your master password or the vault key.
+- Your master password or the vault key. With Hello unlock on, a wrapped copy of the key stays only in memory while Keyra runs.
 - Any item data in plain text: there is no export, no plain temp file and no plain backup.
 - Copied passwords after the clipboard time: Keyra clears them unless you copied something else since, and keeps them out of Windows clipboard history and cloud clipboard (nothing can clear them if Keyra is killed or the PC loses power).
 

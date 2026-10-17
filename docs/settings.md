@@ -1,6 +1,6 @@
 # Settings
 
-Open **Settings** in the command bar. Every setting except the theme is stored inside the encrypted vault, so it moves with the vault file and cannot be changed by editing a plain file.
+Open **Settings** in the command bar. Every setting except the theme and "Unlock with Windows Hello" is stored inside the encrypted vault, so it moves with the vault file and cannot be changed by editing a plain file.
 
 ## Security
 
@@ -11,6 +11,7 @@ Open **Settings** in the command bar. Every setting except the theme is stored i
 | Lock on minimize | On | On / Off | Locks when Keyra is minimized to the taskbar. |
 | Minimize to tray | Off | On / Off | Minimize locks Keyra and hides it next to the clock instead of the taskbar. |
 | Lock when Windows locks | On | On / Off | Locks on Windows lock, user switch and remote disconnect. |
+| Unlock with Windows Hello | Off | On / Off | After you unlock with your master password, Windows Hello can unlock Keyra until you close it. Keyra asks for the master password at least every 14 days. Turning it on asks the master password. Set per PC in `hello-unlock.txt` (not secret). Disabled when Windows Hello is not set up. |
 | Change master password | — | — | Re-encrypts the whole vault with a new key. Old backups keep the old password. |
 
 Keyra also always locks on sleep, on exit, and after 5 wrong master passwords in a row in a "Confirm it's you" check.
