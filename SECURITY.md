@@ -30,7 +30,7 @@ Out of scope, because Keyra cannot protect against them (see [the threat model](
 
 - malware or another person with full control of your unlocked Windows session
 - a weak or reused master password
-- a camera, shoulder surfing, or capture software that gets around Windows display affinity while a value is shown
+- a camera, shoulder surfing, or capture software that gets around Windows display affinity while a value is shown (Keyra blocks normal screenshots, recordings and screen sharing by default)
 
 ## Design
 

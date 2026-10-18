@@ -59,7 +59,7 @@ All features, keys and limits: [features](docs/features.md).
 <summary><b>Check the download and trust the certificate</b> (PowerShell)</summary>
 
 ```powershell
-# Replace <version> with the name of the file you downloaded, e.g. 1.5.0.0
+# Replace <version> with the name of the file you downloaded, e.g. 1.7.1.0
 # SHA-256 must match the release page (shows the file is complete, not who made it)
 Get-FileHash .\Keyra_<version>_x64.msix -Algorithm SHA256
 

@@ -1,5 +1,24 @@
 # Release notes
 
+## 1.7.1
+
+Fixes for Windows Hello unlock.
+
+### Fixed
+- When you bring a locked Keyra to the front, it now asks Windows Hello by itself. In 1.7.0 only the button worked.
+- Closing Keyra now erases its Windows Hello unlock data from memory at once.
+- A master password you type while the Windows Hello prompt is open stays in the box. Enter does nothing while the prompt is open; press it again after the prompt closes.
+- A message about the vault file (damaged, from a newer Keyra, changed or moved outside Keyra) stays on the lock screen; the Windows Hello prompt no longer hides it.
+- Keyra no longer starts the Windows Hello prompt by itself right after another Windows Hello prompt, a message or a file dialog closed.
+- Turning Hello unlock off while its setup prompt is open now really turns it off, and the switch no longer flips back.
+- The 14 days now count from your master password entry. Turning Hello unlock on no longer counts as the master-password check for Legacy access. Creating a new vault ends an older Hello unlock.
+- The line "Confirm with Windows Hello to unlock Keyra this way next time." stays while the prompt is open.
+- Info lines on the lock screen are grey, problems stay in the warning colour, and screen readers announce them.
+- Keyra brings only the real Windows Hello prompt to the front.
+
+### Upgrade
+- Install over 1.7.0 or 1.6; the vault file format does not change. From 1.5, see the 1.6 upgrade notes.
+
 ## 1.7.0
 
 Unlock Keyra with Windows Hello while it runs.
@@ -8,6 +27,9 @@ Unlock Keyra with Windows Hello while it runs.
 - **Unlock with Windows Hello** (Settings → Security, off by default, per PC). After you unlock with your master password, Windows Hello can unlock Keyra until you close it. When you bring a locked Keyra to the front, it asks Windows Hello by itself; the lock screen also has an "Unlock with Windows Hello" button.
 - Keyra asks for the master password after it starts and at least every 14 days. Protected items still ask for their own check.
 - After a master password change, Windows Hello asks once to renew Hello unlock.
+
+### Upgrade from 1.6
+- Install over 1.6. The vault file format does not change, so Keyra 1.6 still opens it.
 
 ### Security
 - The vault key is never written to disk. With Hello unlock on, a copy stays only in memory while Keyra runs, encrypted with a key that needs a Windows Hello signature. The vault file is still protected only by your master password; nothing changes in the file format.

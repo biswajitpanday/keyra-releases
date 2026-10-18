@@ -30,7 +30,7 @@ Everything Keyra does, its keys and its limits. To install, see [install](instal
 - **Auto-lock:** after inactivity (5 minutes by default), on minimize, when Windows locks, on sleep and on exit. Optionally hide Keyra next to the clock instead of the taskbar (Minimize to tray); it locks when it hides.
 
 ## Comfort
-- **Calm lock screen:** says what Keyra is (Encrypted · Offline · No tracking) and its version, warns when Caps Lock is on, and helps without alarm after a wrong password.
+- **Calm lock screen:** says what Keyra is (Encrypted · Offline · No tracking) and its version, shows an "Unlock with Windows Hello" button when Hello unlock is on, warns when Caps Lock is on, and helps without alarm after a wrong password.
 - **Short tour:** after the first unlock, six tips point at the main parts of the app. Settings → Take the tour again.
 - **Light and dark theme:** follows Windows, or choose one. Every setting and its default: [settings](settings.md).
 
@@ -65,6 +65,6 @@ On a protected item, Space, Ctrl+C, Del and double-click ask for Windows Hello f
 - A legacy snapshot is a copy made by hand. It does not update itself; Keyra reminds you when it is out of date.
 - Minimize to tray hides Keyra only after locking it; the tray icon exists only while Keyra is hidden.
 - Updates are installed by hand; Keyra does not tell you when a new version exists.
-- Keyra 1.5 cannot open a vault saved by 1.6. Going back means using the copy made before the first 1.6 save and losing everything done in 1.6; follow the steps in [the FAQ](faq.md#can-i-go-back-to-keyra-15).
+- Keyra 1.5 cannot open a vault saved by 1.6 or later. Going back means using the copy made before the first 1.6 save and losing everything done in 1.6; follow the steps in [the FAQ](faq.md#can-i-go-back-to-keyra-15).
 - No browser autofill, no 2FA codes and no attachments yet.
 - If two PCs change the vault at the same time (for example through OneDrive), Keyra does not merge: it keeps the other change and locks; your unsaved change is not made.

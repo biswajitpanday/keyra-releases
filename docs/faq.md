@@ -32,18 +32,21 @@ Keyra keeps these copies of your vault next to it:
 Each copy is encrypted, but it opens with the master password you had **when it was made**, and it still has the items of that day, also the ones you deleted later. If Documents syncs to OneDrive, the copies sync too. Keep them only while you may go back to Keyra 1.5 or want that older vault. To delete them, open Settings › Backup › **Delete old copies**. If you changed your master password because someone may know the old one, delete them now. Then also empty the OneDrive recycle bin.
 
 ## Can I go back to Keyra 1.5?
-Yes, with `vault.keyra.pre-1.6.bak`, but you lose everything you did in 1.6:
-- every item added in 1.6, also logins;
-- every change, deletion and category change made in 1.6;
+Yes, with `vault.keyra.pre-1.6.bak`, but you lose everything you did in 1.6 or later:
+- every item added since, also logins;
+- every change, deletion and category change made since;
 - a new master password (the copy opens with the one you had then).
 
-Keyra 1.5 cannot open your 1.6 vault, so swap the files by hand:
-1. Close Keyra and uninstall 1.6 (Settings → Apps → Keyra → Uninstall). Your vault in `Documents\Keyra` stays.
+Keyra 1.5 cannot open a vault saved by 1.6 or later, so swap the files by hand:
+1. If "Unlock with Windows Hello" is on, turn it off in Settings → Security. Close Keyra and uninstall it (Settings → Apps → Keyra → Uninstall). Your vault in `Documents\Keyra` stays.
 2. In `Documents\Keyra`, rename `vault.keyra` to `vault.keyra.1.6.bak` and keep it. Only Keyra 1.6 or newer can open it.
 3. Rename the 1.5 copy to `vault.keyra`. It is `vault.keyra.pre-1.6.bak`, or the newest `vault.keyra.pre-1.6-<time>.bak` if there are several.
 4. Install 1.5 and unlock with the master password you had then.
 
 If you deleted the old copies (Settings › Backup › Delete old copies), you cannot go back to 1.5.
+
+## Can I go back to Keyra 1.6?
+Yes, and you keep everything: 1.7 saves the vault the same way as 1.6. If "Unlock with Windows Hello" is on, turn it off in Settings → Security, uninstall Keyra (Windows does not install an older version over a newer one), then install 1.6. Your vault in `Documents\Keyra` stays and opens as it is.
 
 ## "Keyra could not make a copy of your vault before the upgrade"
 Keyra did not save anything, so your vault is unchanged. Check that `Documents\Keyra` is not full or read-only and that OneDrive has finished syncing, then try again.

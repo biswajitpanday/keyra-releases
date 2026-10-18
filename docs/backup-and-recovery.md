@@ -20,6 +20,8 @@ From the lock screen (**Restore from backup…**) or Settings → **Restore from
 4. Your current vault is kept next to it as `vault.keyra.pre-restore-<time>.bak`.
 5. The backup replaces the vault and Keyra locks. Unlock with the backup's password.
 
+A restore also ends Windows Hello unlock until you next unlock with the master password (of the restored vault).
+
 To undo a restore: restore the `.bak` file the same way (it opens with the password that vault had). If no vault was there before, no `.bak` is made.
 
 The `.bak` file is an old copy: it opens with the password that vault had and keeps its items, also deleted ones. When you no longer need it, delete it in Settings › Backup › Delete old copies.
@@ -42,7 +44,7 @@ If you still remember an **older** password, a backup made while that password w
 If you set up legacy access, any two of the three shares open the last legacy snapshot (**Open legacy vault…** on the lock screen). It is read-only and holds only the items you chose, so it is not a backup. See [legacy-access.md](legacy-access.md).
 
 ## Moving to a new PC
-Install Keyra 1.6 or newer (Windows 10 2004 or later), copy `vault.keyra` into `Documents\Keyra` (or use Restore), unlock with your master password.
+Install Keyra 1.6 or newer (Windows 10 2004 or later), copy `vault.keyra` into `Documents\Keyra` (or use Restore), unlock with your master password. "Unlock with Windows Hello" is set per PC: turn it on again in Settings → Security on the new PC.
 
 ## Importing from a CSV (one time)
 **Import** in the command bar (or **Import CSV** on an empty vault) opens one dialog with three steps. 1) Pick where your passwords are now (Chrome, Edge, Firefox, Bitwarden, KeePass, KeePassXC, LastPass, Proton Pass or another CSV) to see how to export them, then **Choose CSV file…**. 2) Keyra shows how many items are new (rows with a name and notes but no username and no password become secure notes), how many are already in Keyra (same website + email, or the same note) and which lines are not usable (missing website, email or password, or a field too long), plus the first new websites; "Delete the CSV file after the import" is ticked. 3) **Import** saves once and deletes the CSV. URL, notes, folder and favourite columns are imported too; a URL that is not a normal web address is left out. The file must be UTF-8: in Excel use "CSV UTF-8 (Comma delimited)". Other encodings are rejected so that no character in a password is changed.

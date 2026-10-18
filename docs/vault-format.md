@@ -91,7 +91,7 @@ After an unlock, weaker-than-default KDF parameters are raised (per field, the l
 
 ## Versions
 
-Version 5 is the format of Keyra 1.6 (item kinds). Version 4 is the format of Keyra 1.5: 1.6 reads it (every item is a Login) and writes version 5 on the first save, after the copy above. Versions 1 to 3 were used only by early test versions and are not read. A future format gets version `6`. Unknown versions are always rejected, never guessed.
+Version 5 is the format of Keyra 1.6 and 1.7 (item kinds; 1.7 adds nothing to the file: Hello unlock lives only in memory and in the per-PC `hello-unlock.txt`). Version 4 is the format of Keyra 1.5: 1.6 reads it (every item is a Login) and writes version 5 on the first save, after the copy above. Versions 1 to 3 were used only by early test versions and are not read. A future format gets version `6`. Unknown versions are always rejected, never guessed.
 
 ## Example (header of a test vault)
 

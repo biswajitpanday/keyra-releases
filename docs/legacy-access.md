@@ -9,6 +9,7 @@ without your master password.
 - It makes **three shares**. Any **two** of them open the snapshot. One share alone opens nothing.
 - The **snapshot** is a separate file holding only the items you chose, encrypted with the legacy key.
 - You update the snapshot by hand. Keyra tells you when it is out of date (more than 30 days old and something changed).
+- The legacy view never uses Windows Hello unlock; it opens only with two shares.
 
 Give the shares to different people or places (for example: one to a family member, one to a lawyer,
 one in a safe). Keep the snapshot file where your heirs can find it (USB stick, cloud folder).
@@ -20,7 +21,7 @@ Anyone with the vault unlocked and the master password can make new shares.
 
 ## Crypto
 
-Only built-in .NET primitives (constitution rule 1):
+Only built-in .NET primitives:
 
 ```
 shares s1, s2, s3     = 32 random bytes each

@@ -5,7 +5,7 @@ Keyra needs Windows 10 version 2004 (build 19041) or later, x64. It installs as 
 ## Install
 
 1. From [Releases](https://github.com/biswajitpanday/keyra-releases/releases), download `Keyra_<version>_x64.msix` and `KeyraDev.cer`.
-2. Check the download. In PowerShell, in the download folder (replace `<version>` with the name of the file you downloaded, e.g. `1.5.0.0`):
+2. Check the download. In PowerShell, in the download folder (replace `<version>` with the name of the file you downloaded, e.g. `1.7.1.0`):
    `Get-FileHash .\Keyra_<version>_x64.msix -Algorithm SHA256` must match the SHA-256 on the release page. This shows the file is complete; it cannot prove who made it.
 3. Check the signer:
    `(Get-AuthenticodeSignature .\Keyra_<version>_x64.msix).SignerCertificate.Thumbprint` and `(Get-PfxCertificate .\KeyraDev.cer).Thumbprint` must both be
@@ -29,7 +29,7 @@ To get notified, use **Watch → Custom → Releases** on this repository.
 
 ## Uninstall and remove data
 
-Before you uninstall: if "Unlock with Windows Hello" is on, turn it off in Settings → Security. This deletes Keyra's Windows Hello key.
+Before you uninstall: if "Unlock with Windows Hello" is on, turn it off in Settings → Security. This deletes Keyra's Windows Hello key. If you already uninstalled with it on, install Keyra again, unlock, turn it on (enter your master password and confirm with Windows Hello), then turn it off and uninstall.
 
 1. Settings → Apps → Keyra → Uninstall. This removes the app and, usually, its theme choice and event log. Your vault in the Documents folder is **not** removed.
 2. To remove the certificate trust, in an **admin** PowerShell:
@@ -46,3 +46,5 @@ Before you uninstall: if "Unlock with Windows Hello" is on, turn it off in Setti
 | Old copies: the vault before a restore, and your Keyra 1.5 vault (they open with the master password of that time; delete them in Settings › Backup) | same folder, `vault.keyra.pre-restore-<time>.bak` and `vault.keyra.pre-1.6.bak` |
 | Legacy snapshot (encrypted, only if you set up legacy access) | the file you choose |
 | Theme choice and event log (no secrets) | `%LOCALAPPDATA%\Keyra\`, or the MSIX private copy of it |
+| "Unlock with Windows Hello" on or off (per PC, no secrets) | `hello-unlock.txt` in `%LOCALAPPDATA%\Keyra\`, or the MSIX private copy of it |
+| Keyra's Windows Hello key "Keyra vault unlock" (only if you turned Hello unlock on) | Windows, in the TPM when the PC has one; turning the setting off deletes it |
